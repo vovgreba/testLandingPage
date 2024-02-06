@@ -1,0 +1,39 @@
+.socials-sidebar {
+  display: inline-block;
+  position: fixed;
+  top: 236px;
+  left: 0;
+  border-radius: 0 4px 4px 0;
+  z-index: 10;
+  &_block {
+    @include flex-all-center;
+    width: 40px;
+    height: 40px;
+  }
+  .facebook {
+    background-color: $bg-facebook;
+    border-radius: 0 4px 0 0;
+  }
+  .twiter {
+    background-color: $bg-twiter;
+  }
+  .telegram {
+    background-color: $bg-telegram;
+  }
+  .pinterest {
+    background-color: $bg-pinterest;
+  }
+  .raddit {
+    background-color: $bg-raddit;
+  }
+  .hurt {
+    background-color: $bg-hurt;
+    border-radius: 0 0 4px 0;
+  }
+}
+
+@media screen and (max-width: 1300px) {
+  .socials-sidebar {
+    display: none;
+  }
+}

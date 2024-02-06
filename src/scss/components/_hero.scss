@@ -1,0 +1,384 @@
+.hero {
+  position: relative;
+  padding-top: 44px;
+
+  &_inner {
+    border-radius: 40px;
+  }
+  &_banner {
+    position: relative;
+    @include flex-all-sb;
+    background-image: url('../img/banner-bg.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    min-height: 184px;
+    border-radius: 40px;
+    padding: 28px 59px 36px 56px;
+    color: #fff;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(22, 28, 58, 0.8);
+      border-radius: 40px;
+    }
+  }
+  &_logo {
+    margin-right: 24px;
+    img {
+      max-width: 120px;
+      width: 100%;
+    }
+  }
+  &_content {
+    position: relative;
+    z-index: 5;
+    display: flex;
+  }
+  &_desc {
+    margin-top: 23px;
+    &_title {
+      margin: 0;
+      font-size: 30px;
+      font-weight: 700;
+      line-height: 120%;
+      letter-spacing: 0.5px;
+      margin-bottom: 10px;
+    }
+    &_platform {
+      @include flex-v-center;
+      gap: 8px;
+      &-btn {
+        border: 1px solid rgb(255, 255, 255);
+        border-radius: 17px;
+        padding: 5px 16.17px 5px 13px;
+        color: #fff;
+        transition: border .4s;
+        svg {
+          margin-right: 5px;
+        }
+        &:hover {
+          border: 1px solid #4f5f71;
+        }
+      }
+      &-pc {
+        border: 1px solid transparent;
+        background: linear-gradient(90.00deg, rgb(13, 208, 186),rgb(42, 134, 229) 100%);
+        svg {
+          margin-right: 6px;
+        }
+      }
+    }
+  }
+  &_rating {
+    display: flex;
+    position: relative;
+    z-index: 5;
+    &-circle {
+      @include flex-all-center;
+      position: relative;
+      width: 86px;
+      height: 86px;
+      background:  rgba(0, 0, 0, 0.4);
+      // також можна через linear-gradient зробити цю обводку, але тоді не виходить скруглити кінця.
+      // background: linear-gradient(270.00deg, rgb(252, 197, 57) 0%,  rgb(220, 74, 25) 90%,  rgba(0, 0, 0, 0.4) 90%);
+      // transform: rotate(50deg);
+      border-radius: 50%;
+      margin-right: 12px;
+      &::before {
+        content: '';
+        position: absolute;
+        width: 90px;
+        height: 89px;
+        top: -1px;
+        left: -3px;
+        background: url('../img/Union.png');
+      }
+      &-inner {
+        width: 70px;
+        height: 70px;
+        @include flex-all-center;
+        background-color: #0E1219;
+        color: #EBF6F5;
+        line-height: 120%;
+        font-size: 30px;
+        font-weight: 900;
+        border-radius: 50%;
+        // transform: rotate(-50deg);
+      }
+    }
+    &-name {
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 32px;
+    }
+    &-votes {
+      font-weight: 500;
+      line-height: 21px;
+    }
+    &-number {
+      display: flex;
+      align-items: center;
+      font-weight: 700;
+      line-height: 21px;
+      white-space: nowrap;
+    }
+    &-num {
+      width: 25px;
+      color: $color-rating-num;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+      margin-left: 3px;
+    }
+  }
+  &_widget {
+    @include flex-all-sb;
+    margin-top: -100px;
+    padding-top: 100px;
+    padding-bottom: 13px;
+    background: rgb(255, 255, 255);
+    border-bottom-left-radius: 40px;
+    border-bottom-right-radius: 40px;
+    color: #707070;
+    box-shadow: 0px 22px 59px 0px rgba(42, 134, 229, 0.07);
+  }
+  &_widget-items {
+    display: flex;
+    line-height: 26px;
+    margin-left: 56px;
+    margin-top: 11px;
+  }
+  &_widget-title {
+    margin: 0;
+    padding: 0;
+    margin-right: 19px;
+    font-weight: 400;
+  }
+  &_widget-list {
+    @include flex-v-center;
+    li {
+      border-left: 1px solid #707070;
+      margin-right: 19px;
+      padding-left: 17px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    .nav_link {
+      display: inline-block;
+      transition: color 0.4s, transform 0.4s;
+      &:hover {
+        color: #021529;
+        transform: scale(1.1);
+      }
+    }
+  }
+  &_widget_rating {
+    position: relative;
+    @include flex-v-center;
+    border-radius: 40px;
+    margin-right: 33px;
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 120%;
+    letter-spacing: 0.5px;
+    margin-top: 11px;
+    background: linear-gradient(270.00deg, rgb(252, 197, 57),rgb(220, 74, 25) 100%);
+    color: #fff;
+    span {
+      margin-left: 11.6px;
+      margin-right: 9.6px;
+      cursor: pointer;
+    }
+    &-list {
+      @include flex-all-center;
+      li {
+        border-left: 1px solid rgba(255, 255, 255, 0.2);
+        padding: 10.5px 6px;
+        cursor: pointer;
+      }
+    }
+  }
+  .bg--light {
+    background-color: $bg-widget;
+    color: #707070;
+    border-top-right-radius: 40px;
+    border-bottom-right-radius: 40px;
+    li {
+      border-left: 1px solid rgba(112, 112, 112, 0.15);
+      padding: 10.5px 6px;
+    }
+  }
+  .widget-burger {
+    display: none;
+    position: relative;
+    align-items: center;
+    white-space: nowrap;
+    gap: 10px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 26px;
+    margin-top: 10px;
+  }
+  .widget_burger-menu {
+    position: absolute;
+    z-index: -20;
+    background: #fff;
+    width: 100%;
+    min-height: 150%;
+    padding: 20px;
+    text-align: center;
+    transition: z-index 0.4s,;
+    .nav {
+      transform: translateY(-50px);
+      transition: transform 0.4s;
+    }
+    .nav_item {
+      margin-bottom: 29px;
+      &:first-child {
+        display: none;
+      }
+      &:nth-of-type(2) {
+        .nav_link {
+          &::before {
+            content: '';
+            position: absolute;
+            width: 24px;
+            height: 8px;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 40px;
+            background: linear-gradient(90.00deg, rgb(13, 208, 186),rgb(42, 134, 229));
+          }
+        }
+      }
+    }
+    .nav_link {
+      position: relative;
+      background: linear-gradient(90.00deg, rgb(13, 208, 186),rgb(42, 134, 229));
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 20px;
+      font-weight: 700;
+      line-height: 26px;
+      letter-spacing: 0.5px;
+    }
+  }
+  .active-widget {
+    z-index: 20;
+    .nav {
+      transform: translateY(0);
+    }
+  }
+}
+
+
+
+@media screen and (max-width: 962px) {
+  .hero_rating {
+    display: none;
+  }
+  .hero_widget_rating {
+    display: none;
+  }
+  .hero_widget {
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 768px) {
+  .banner-menu {
+    min-height: 60px;
+  }
+  .hero_desc_title {
+    margin: 0;
+    font-size: 35px;
+  }
+  .hero_banner {
+    padding: 30px;
+  }
+  .hero_logo {
+    margin-right: 22px;
+    img {
+      width: 120px;
+    }
+  }
+  .hero_desc {
+    margin-top: 0;
+  }
+  .hero_content {
+    align-items: center;
+
+  }
+  .hero_desc_platform {
+    display: none;
+  }
+  .hero_widget-items {
+    display: none;
+  }
+  .hero {
+    background-color: #fff;
+    padding-top: 0;
+    padding-bottom: 10px;
+    .widget-burger {
+      display: flex;
+      justify-content: center;
+    }
+
+  }
+  .hero_widget {
+    display: none;
+    padding-bottom: 10px;
+  }
+}
+
+
+@media screen and (max-width: 568px) {
+  .hero {
+    &_logo {
+      img {
+        width: 89px;
+      }
+    }
+    &_desc_title {
+      font-size: 24px;
+    }
+    &_banner {
+      min-height: unset;
+      padding: 20px;
+      border-radius: 20px;
+      &::before {
+        border-radius: 20px;
+      }
+    }
+    .widget_burger-menu {
+      .nav_item {
+        &:first-child {
+          display: block;
+        }
+        &:nth-of-type(1) {
+          .nav_link {
+            &::before {
+              content: '';
+              position: absolute;
+              width: 24px;
+              height: 8px;
+              bottom: -10px;
+              left: 50%;
+              transform: translateX(-50%);
+              border-radius: 40px;
+              background: linear-gradient(90.00deg, rgb(13, 208, 186),rgb(42, 134, 229));
+            }
+          }
+        }
+        &:nth-of-type(2) {
+          display: none;
+        }
+      }
+    }
+  }
+}

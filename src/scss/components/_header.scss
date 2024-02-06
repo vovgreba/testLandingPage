@@ -1,0 +1,160 @@
+.header {
+  background: linear-gradient(90.00deg, rgb(13, 208, 186),rgb(42, 134, 229) 100%);
+  @include flex-all-center;
+  color: #fff;
+  min-height: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: 0.5px;
+  &_inner {
+    @include flex-all-sb;
+  }
+  .nav_list{
+    @include flex-all-sb;
+    gap: 31px;
+  }
+  .nav_link {
+    @include flex-v-center;
+    transition: color 0.3s;
+    svg {
+      margin-right: 4.5px;
+    }
+    &:hover {
+      color: #064139;
+    }
+  }
+  &_social {
+    gap: 5px;
+  }
+  &_socials-wrap {
+    @include flex-v-center;
+    gap: 5px;
+  }
+  &_social-link {
+    width: 29px;
+    height: 29px;
+
+  }
+  &_toogle {
+    margin-left: 15px;
+  }
+}
+
+.socials-wrap {
+  @include flex-v-center;
+}
+.social-link {
+  @include flex-all-center;
+
+  &:hover {
+    svg {
+      path {
+        fill: #033d46;
+        transition: fill 0.4s;
+      }
+    }
+  }
+}
+
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 54px;
+  height: 29px;
+  .icon-sun {
+    position: absolute;
+    top: 50%;
+    left: 15%;
+    transform: translateY(-50%);
+  }
+  .icon-moon {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%);
+  }
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #FFF;
+  transition: .4s;
+  .icon-moon {
+    display: none;
+  }
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 25px;
+  width: 25px;
+  left: 3px;
+  bottom: 2px;
+  background-color: rgb(24, 58, 93);
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: $bg-dark-switch;
+  .icon-sun {
+    display: none;
+  }
+  .icon-moon {
+    display: block;
+  }
+}
+
+
+input:checked + .slider:before {
+  background-color: #fff;
+  transform: translateX(23px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 800px) {
+  .header {
+    .nav_item {
+      &:last-child {
+        display: none;
+      }
+    }
+
+  }
+}
+@media screen and (max-width: 668px) {
+  .header {
+    &_social {
+      justify-content: space-between;
+      width: 100%;
+    }
+    &_nav {
+      display: none;
+    }
+  }
+}
+
+

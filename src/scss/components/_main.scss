@@ -1,0 +1,212 @@
+
+.prime {
+  padding: 46px 0 158px;
+  &_inner {
+    @include flex-container(row, space-between, flex-start);
+    gap: 59px;
+  }
+  // article
+
+  .article {
+    max-width: 810px;
+    width: 100%;
+    .nav {
+      &_link {
+        position: relative;
+        font-size: 14px;
+        line-height: 18px;
+        letter-spacing: 0.5px;
+      }
+      &_list {
+        @include flex;
+        gap: 5px;
+        li:not(:first-child) {
+          &::before {
+            content: '>';
+          margin-right: 5px;
+          }
+        }
+        li:last-child {
+          font-weight: 700;
+          &::before {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    &_title {
+      background: linear-gradient(90.00deg, rgb(13, 208, 186),rgb(42, 134, 229));
+      background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-size: 42px;
+      font-weight: 900;
+      line-height: 54px;
+      letter-spacing: 0.5px;
+      margin: 0  0 20px;
+    }
+    &_description {
+      font-size: 20px;
+      line-height: 32px;
+      letter-spacing: 0.5px;
+      text-align: left;
+      margin: 0;
+      margin-bottom: 63px;
+    }
+    &_cards {
+      &-title {
+        position: relative;
+        font-size: 20px;
+        font-weight: 700;
+        line-height: 26px;
+        letter-spacing: 0.5px;
+        margin: 0;
+        margin-bottom: 37px;
+        &::before {
+          content: '';
+          position: absolute;
+          border-radius: 20px;
+          background: linear-gradient(90.00deg, rgb(13, 208, 186),rgb(42, 134, 229) 100%);
+          width: 44px;
+          height: 8px;
+          bottom: -15px;
+          left: 0;
+        }
+      }
+      &-wrapper {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px 16px;
+        padding: 10px;
+      }
+    }
+    &_card {
+      padding: 20px;
+      border-radius: 20px;
+      box-shadow: 0px 3px 16px 0px rgba(42, 134, 229, 0.08);
+      background: rgb(255, 255, 255);
+      transition: box-shadow 0.4s, transform 0.4s;
+      cursor: pointer;
+      &:hover {
+        box-shadow: 0px 3px 16px 0px rgba(19, 83, 146, 0.28);
+        transform: scale(1.02);
+      }
+    }
+    &_image {
+      display: block;
+      max-width: 347px;
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 18px;
+      border-radius: 20px;
+    }
+    &_name {
+      color: $banner-menu-light;
+      font-size: 22px;
+      font-weight: 700;
+      line-height: 120%;
+      letter-spacing: 0.5px;
+      text-align: center;
+      margin: 0;
+      margin-bottom: 10px;
+    }
+    &_info {
+      @include flex-all-center;
+      gap: 22px;
+      span {
+        font-size: 14px;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: $color-card-text;
+        margin-left: 5px;
+      }
+    }
+  }
+
+
+  // aside
+
+  .aside {
+    @include flex-all-center;
+    position: relative;
+    max-width: 300px;
+    width: 100%;
+    min-height: 600px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: url('../img/aside-bg.png');
+      border-radius: 20px;
+      z-index: 5;
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background: linear-gradient(110.22deg, rgb(252, 183, 56) 6.721%,rgb(239, 121, 60) 113.183%);
+      z-index: 1;
+      border-radius: 20px;
+    }
+    &_content {
+      position: relative;
+      z-index: 10;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: #fff;
+
+    }
+    &_title {
+      text-transform: uppercase;
+      text-align: center;
+      font-size: 60px;
+      line-height: 120%;
+      margin-bottom: 18px;
+    }
+    &_desc {
+      font-size: 40px;
+      line-height: 23px;
+    }
+  }
+
+}
+
+
+@media screen and (max-width: 968px) {
+
+  .prime {
+    .aside {
+      display: none;
+    }
+    .article {
+      max-width: unset;
+    }
+  }
+}
+@media screen and (max-width: 635px) {
+  .prime {
+    .article_cards-wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .article_image {
+      max-width: unset;
+    }
+  }
+}
+@media screen and (max-width: 568px) {
+  .prime .article .nav_list {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .prime .article_title {
+    text-align: center;
+  }
+}

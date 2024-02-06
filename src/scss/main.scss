@@ -1,0 +1,17 @@
+// базовые подключения
+@import "vars";
+@import "mixins";
+@import "fonts";
+@import "settings";
+
+// подключения компонентов страницы
+
+@import './components/header';
+@import './components/banner-menu';
+@import './components/hero';
+@import './components/socials';
+@import './components/main';
+@import './components/footer';
+
+
+@import './components/dark-theme';

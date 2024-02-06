@@ -1,0 +1,128 @@
+.dark {
+  background: rgb(30, 30, 30);
+  transition: background 0.4s;
+
+  // banner-menu
+  .banner-menu {
+    background: rgb(30, 30, 30);
+    transition: background 0.4s;
+    .logo-dark {
+      display: block;
+    }
+    .logo-light {
+      display: none;
+    }
+    .nav_list {
+      color: $footer-text;
+
+    }
+    .nav_link {
+      transition: color .4s;
+      &:hover {
+        color: #fff;
+      }
+    }
+    &_search {
+      background: $bg-dark-switch;
+      border: transparent;
+      &:focus {
+        border: 1px solid #717070;
+      }
+    }
+  }
+  // hero
+
+  .hero_widget {
+    box-shadow: 0px 22px 59px 0px rgba(42, 134, 229, 0.07);
+    background: rgb(14, 18, 25);
+  }
+  .hero .widget_burger-menu {
+    background: rgb(30, 30, 30);
+  }
+  .hero_widget-list .nav_link{
+    &:hover {
+      color: #fff;
+    }
+  }
+  .banner-menu {
+    .burger-banner-menu {
+      background: rgb(30, 30, 30);
+      .list_nav {
+        .nav_list {
+          color: #fff;
+        }
+      }
+    }
+    .nav_list {
+      color: #2A86E5;
+    }
+  }
+
+  .prime {
+    .article_description, .article_info span, .article_cards-title {
+      color: #fff;
+    }
+    .article_card {
+    box-shadow: 0px 3px 16px 0px rgba(0, 0, 0, 0.55);
+    background: rgb(32, 36, 52);
+    }
+    .article_info {
+      svg {
+        path {
+          fill: #fff;
+        }
+      }
+    }
+  }
+  .footer_information {
+    box-shadow: 0px 3px 15px 0px rgba(0, 0, 0, 0.16);
+    background: rgb(32, 36, 52);
+  }
+  .footer_logo, .footer_social svg {
+
+    path {
+      fill: #fff;
+      transition: fill 0.4s;
+    }
+  }
+  .social-link {
+    &:hover {
+      svg {
+        path {
+          fill: #0DD0BA;
+        }
+      }
+    }
+  }
+  .footer_desc {
+    color: #fff;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .dark {
+    .hero {
+      box-shadow: 0px 22px 59px 0px rgba(42, 134, 229, 0.07);
+      background: rgb(14, 18, 25);
+
+    }
+   .banner-menu {
+    background: rgb(14, 18, 25);
+   }
+   .widget-burger {
+    color: #fff;
+    svg {
+      path {
+        fill: #fff;
+      }
+    }
+   }
+  }
+}
+
+
+
+
+
+
+// щоб курсор не пригав
