@@ -10,6 +10,11 @@
   &_inner {
     @include flex-all-sb;
   }
+  .nav_item {
+    display: flex;
+    align-items: center;
+    gap: 4.5px;
+  }
   .nav_list{
     @include flex-all-sb;
     gap: 31px;
