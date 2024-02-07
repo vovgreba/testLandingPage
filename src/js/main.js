@@ -32,7 +32,6 @@ const widgetBurgerMenu = document.querySelector('.widget_burger-menu');
 
 widgetBurger.addEventListener('click', (ev) => {
   widgetBurgerMenu.classList.toggle('active-widget');
-  console.log(ev.target);
 });
 
 document.addEventListener('click', (ev) => {
